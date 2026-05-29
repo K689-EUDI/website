@@ -2,9 +2,9 @@
   <img src="public/icon.webp" width="80" alt="IdentID" />
 </p>
 
-# identid-website
+# IdentID website
 
-The marketing website for [IdentID](https://github.com/K689-EUDI/IdentID) — an Android EUDI wallet built at KTU.  
+The marketing website for [IdentID](https://github.com/K689-EUDI/IdentID) - an Android EUDI wallet built at KTU.  
 Deployed at [identid.linux123123.com](https://identid.linux123123.com).
 
 ## Build
