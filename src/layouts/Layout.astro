@@ -1,0 +1,117 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "IdentID – Your Digital Identity, In Your Pocket",
+  description = "IdentID is an open-source Android EUDI wallet for managing digital identity documents, signing papers electronically, and sharing credentials securely via NFC and QR. Built by students at Kaunas University of Technology.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicons -->
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" type="image/webp" href="/icon.webp" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- SEO -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta
+      name="keywords"
+      content="EUDI wallet, digital identity, European Digital Identity, Android wallet, identity documents, NFC, QR code, document signing, IdentID"
+    />
+    <meta name="author" content="K689-EUDI Team" />
+    <link rel="canonical" href="https://identid.linux123123.com" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://identid.linux123123.com" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta
+      property="og:image"
+      content="https://identid.linux123123.com/icon-512.png"
+    />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta
+      name="twitter:image"
+      content="https://identid.linux123123.com/icon-512.png"
+    />
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#1a1a2e" />
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  :root {
+    --color-bg: #0f0f1a;
+    --color-surface: #1a1a2e;
+    --color-surface-light: #25253d;
+    --color-primary: #4f8cff;
+    --color-primary-hover: #3a75e8;
+    --color-accent: #7c5cfc;
+    --color-text: #e8e8f0;
+    --color-text-muted: #9898b0;
+    --color-border: #2a2a45;
+    --font-sans:
+      "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-mono: "JetBrains Mono", "Fira Code", monospace;
+    --max-width: 1200px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    font-family: var(--font-sans);
+    background: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  a:hover {
+    color: var(--color-primary-hover);
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+</style>
