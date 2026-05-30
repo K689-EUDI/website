@@ -5,9 +5,45 @@ interface Props {
 }
 
 const {
-  title = "IdentID – Your Digital Identity, In Your Pocket",
+  title = "IdentID - Your Digital Identity, In Your Pocket",
   description = "IdentID is an open-source Android EUDI wallet for managing digital identity documents, signing papers electronically, and sharing credentials securely via NFC and QR. Built by students at Kaunas University of Technology.",
 } = Astro.props;
+
+const siteUrl = "https://identid.linux123123.com";
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
+
+const jsonLdWebSite = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "IdentID",
+  url: siteUrl,
+  description,
+  inLanguage: "en",
+};
+
+const jsonLdSoftwareApp = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "IdentID",
+  operatingSystem: "Android 8.0+",
+  applicationCategory: "SecurityApplication",
+  description,
+  url: siteUrl,
+  downloadUrl: "https://github.com/K689-EUDI/IdentID/releases/latest",
+  softwareVersion: "latest",
+  license: "https://joinup.ec.europa.eu/licence/eupl/eupl-12",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "EUR",
+  },
+  author: {
+    "@type": "Organization",
+    name: "K689-EUDI Team",
+    url: "https://github.com/K689-EUDI",
+  },
+  image: `${siteUrl}/og-image.png`,
+};
 ---
 
 <!doctype html>
@@ -17,30 +53,68 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Favicons -->
-    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="icon" type="image/webp" href="/icon.webp" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="167x167"
+      href="/apple-touch-icon-167x167.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="/apple-touch-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="/apple-touch-icon-120x120.png"
+    />
     <link rel="manifest" href="/site.webmanifest" />
+    <meta name="application-name" content="IdentID" />
+    <meta name="msapplication-TileColor" content="#1a1a2e" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
 
     <!-- SEO -->
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <meta
       name="keywords"
       content="EUDI wallet, digital identity, European Digital Identity, Android wallet, identity documents, NFC, QR code, document signing, IdentID"
     />
     <meta name="author" content="K689-EUDI Team" />
-    <link rel="canonical" href="https://identid.linux123123.com" />
+    <link rel="canonical" href={canonicalUrl} />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://identid.linux123123.com" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta
       property="og:image"
-      content="https://identid.linux123123.com/icon-512.png"
+      content="https://identid.linux123123.com/og-image.png"
     />
+    <meta
+      property="og:image:secure_url"
+      content="https://identid.linux123123.com/og-image.png"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="IdentID open-source EUDI wallet preview card"
+    />
+    <meta property="og:site_name" content="IdentID" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -48,12 +122,26 @@ const {
     <meta name="twitter:description" content={description} />
     <meta
       name="twitter:image"
-      content="https://identid.linux123123.com/icon-512.png"
+      content="https://identid.linux123123.com/og-image.png"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="IdentID open-source EUDI wallet preview card"
     />
 
     <!-- Theme -->
     <meta name="theme-color" content="#1a1a2e" />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Structured Data -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(jsonLdWebSite)}
+    />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(jsonLdSoftwareApp)}
+    />
   </head>
   <body>
     <slot />

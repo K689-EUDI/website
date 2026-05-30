@@ -1,13 +1,14 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
+import logo from "../assets/logo.svg";
 ---
 
 <Layout>
-  <!-- Nav -->
   <nav class="nav">
     <div class="nav-inner">
       <a href="#" class="nav-brand">
-        <img src="/icon.webp" alt="IdentID" width="36" height="36" />
+        <Image src={logo} alt="" width={36} height={36} />
         <span>IdentID</span>
       </a>
       <div class="nav-links">
@@ -19,24 +20,373 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </nav>
 
-  <!-- Hero -->
-  <section class="hero" id="hero">
-    <div class="hero-bg"></div>
-    <div class="container hero-content">
-      <div class="hero-text">
-        <div class="badge" data-animate>Open Source · EUPL 1.2</div>
-        <h1 data-animate>
-          Your digital identity,<br /><span class="gradient-text"
-            >in your pocket.</span
+  <main id="main-content">
+    <section class="hero" id="hero">
+      <div class="hero-bg"></div>
+      <div class="container hero-content">
+        <div class="hero-text">
+          <div class="badge">Open Source · EUPL 1.2</div>
+          <h1>
+            Your digital identity,<br /><span class="gradient-text"
+              >in your pocket.</span
+            >
+          </h1>
+          <p class="hero-description">
+            A modern Android wallet for the European Digital Identity ecosystem.
+            Manage credentials, sign documents, and share identity data securely
+            - all from your phone.
+          </p>
+          <div class="hero-actions">
+            <a href="#download" class="btn btn-primary btn-lg">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"
+                ></path><polyline points="7 10 12 15 17 10"></polyline><line
+                  x1="12"
+                  y1="15"
+                  x2="12"
+                  y2="3"></line></svg
+              >
+              Download APK
+            </a>
+            <a
+              href="https://github.com/K689-EUDI/IdentID"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-outline btn-lg"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                ><path
+                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                ></path></svg
+              >
+              View Source
+            </a>
+          </div>
+          <div class="hero-badges">
+            <span class="tech-badge">Kotlin</span>
+            <span class="tech-badge">Jetpack Compose</span>
+            <span class="tech-badge">EUDI Wallet Core</span>
+            <span class="tech-badge">NFC & BLE</span>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="phone-mockup">
+            <Image
+              src={logo}
+              alt="IdentID app icon"
+              class="hero-icon"
+              width={180}
+              height={180}
+              loading="eager"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" id="features">
+      <div class="container">
+        <div class="section-header" data-animate>
+          <h2>Everything you need in a digital wallet</h2>
+          <p>Built on EU standards, designed for real people.</p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card" data-animate>
+            <div class="feature-icon">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><rect x="2" y="5" width="20" height="14" rx="2"></rect><line
+                  x1="2"
+                  y1="10"
+                  x2="22"
+                  y2="10"></line><line x1="6" y1="15" x2="10" y2="15"
+                ></line></svg
+              >
+            </div>
+            <h3>Document Management</h3>
+            <p>
+              Store and browse your identity documents and loyalty cards in one
+              secure place.
+            </p>
+          </div>
+          <div class="feature-card" data-animate>
+            <div class="feature-icon">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><path d="M12 20h9"></path><path
+                  d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"
+                ></path></svg
+              >
+            </div>
+            <h3>Document Signing</h3>
+            <p>
+              Digitally sign documents using Remote Qualified Electronic
+              Signatures (RQES).
+            </p>
+          </div>
+          <div class="feature-card" data-animate>
+            <div class="feature-icon">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><rect x="3" y="3" width="7" height="7"></rect><rect
+                  x="14"
+                  y="3"
+                  width="7"
+                  height="7"></rect><rect x="3" y="14" width="7" height="7"
+                ></rect><rect x="14" y="14" width="3" height="3"></rect></svg
+              >
+            </div>
+            <h3>Proximity Sharing</h3>
+            <p>
+              Share credentials face-to-face via QR code and Bluetooth Low
+              Energy.
+            </p>
+          </div>
+          <div class="feature-card" data-animate>
+            <div class="feature-icon">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><path d="M5 12.55a11 11 0 0114.08 0"></path><path
+                  d="M1.42 9a16 16 0 0121.16 0"></path><path
+                  d="M8.53 16.11a6 6 0 016.95 0"></path><circle
+                  cx="12"
+                  cy="20"
+                  r="1"></circle></svg
+              >
+            </div>
+            <h3>NFC Transfer</h3>
+            <p>
+              Tap-to-share wallet data between devices. Quick, contactless, and
+              secure.
+            </p>
+          </div>
+          <div class="feature-card" data-animate>
+            <div class="feature-icon">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><rect x="3" y="11" width="18" height="11" rx="2"></rect><path
+                  d="M7 11V7a5 5 0 0110 0v4"></path></svg
+              >
+            </div>
+            <h3>Biometric & PIN Auth</h3>
+            <p>
+              Protect access with your fingerprint or device PIN. Your data
+              stays yours.
+            </p>
+          </div>
+          <div class="feature-card" data-animate>
+            <div class="feature-icon">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"
+                ></path><circle cx="12" cy="7" r="4"></circle></svg
+              >
+            </div>
+            <h3>Pseudonyms</h3>
+            <p>
+              Manage pseudonymous identities for when you want extra privacy
+              online.
+            </p>
+          </div>
+          <div class="feature-card" data-animate>
+            <div class="feature-icon">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><polyline points="23 4 23 10 17 10"></polyline><path
+                  d="M20.49 15a9 9 0 11-2.12-9.36L23 10"></path></svg
+              >
+            </div>
+            <h3>QR Issuance</h3>
+            <p>
+              Add new credentials simply by scanning an issuer's QR code. No
+              fuss.
+            </p>
+          </div>
+          <div class="feature-card" data-animate>
+            <div class="feature-icon">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><rect x="5" y="2" width="14" height="20" rx="2"></rect><line
+                  x1="12"
+                  y1="18"
+                  x2="12.01"
+                  y2="18"></line><path d="M9 7h6M9 11h4"></path></svg
+              >
+            </div>
+            <h3>Device Transfer</h3>
+            <p>
+              Switching phones? Migrate your entire wallet to a new device
+              seamlessly.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="demo" id="demo">
+      <div class="container">
+        <div class="section-header" data-animate>
+          <h2>See it in action</h2>
+          <p>
+            A quick walkthrough of IdentID showing the main features and flow.
+          </p>
+        </div>
+        <div class="demo-video" data-animate>
+          <video controls preload="metadata">
+            <source src="/demo.mp4" type="video/mp4" />
+            Your browser doesn't support video playback.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <section class="team" id="team">
+      <div class="container">
+        <div class="section-header" data-animate>
+          <h2>Meet the team</h2>
+          <p>A student group project at Kaunas University of Technology.</p>
+        </div>
+        <div class="team-grid">
+          <div class="team-card" data-animate>
+            <img
+              src="https://avatars.githubusercontent.com/u/26341983?v=4"
+              alt="Linas Aleksandravičius"
+              class="team-avatar"
+              loading="lazy"
+            />
+            <h3>Linas Aleksandravičius</h3>
+            <p class="team-role">IFF-3/2</p>
+            <a
+              href="https://github.com/Linux123123"
+              target="_blank"
+              rel="noopener">@Linux123123</a
+            >
+          </div>
+          <div class="team-card" data-animate>
+            <img
+              src="https://avatars.githubusercontent.com/u/199596835?v=4"
+              alt="Nojus Birmanas"
+              class="team-avatar"
+              loading="lazy"
+            />
+            <h3>Nojus Birmanas</h3>
+            <p class="team-role">IFF-3/1</p>
+            <a href="https://github.com/Nirmanas" target="_blank" rel="noopener"
+              >@Nirmanas</a
+            >
+          </div>
+          <div class="team-card" data-animate>
+            <img
+              src="https://avatars.githubusercontent.com/u/143647478?v=4"
+              alt="Martynas Kvietelaitis"
+              class="team-avatar"
+              loading="lazy"
+            />
+            <h3>Martynas Kvietelaitis</h3>
+            <p class="team-role">IFF-3/4</p>
+            <a
+              href="https://github.com/kvietelaitis"
+              target="_blank"
+              rel="noopener">@kvietelaitis</a
+            >
+          </div>
+          <div class="team-card" data-animate>
+            <div class="team-avatar-placeholder"></div>
+            <h3>Nojus Talubinskas</h3>
+            <p class="team-role">MGTM-3/1</p>
+          </div>
+          <div class="team-card" data-animate>
+            <div class="team-avatar-placeholder"></div>
+            <h3>Ričardas Žiemys</h3>
+            <p class="team-role">MGMFN-3</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="download" id="download">
+      <div class="container">
+        <div class="download-card" data-animate>
+          <h2>Ready to try it?</h2>
+          <p>
+            Grab the latest release APK directly from GitHub. Android only for
+            now - requires Android 8.0+.
+          </p>
+          <a
+            id="download-btn"
+            href="https://github.com/K689-EUDI/IdentID/releases/latest"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-primary btn-lg"
           >
-        </h1>
-        <p class="hero-description" data-animate>
-          A modern Android wallet for the European Digital Identity ecosystem.
-          Manage credentials, sign documents, and share identity data securely -
-          all from your phone.
-        </p>
-        <div class="hero-actions" data-animate>
-          <a href="#download" class="btn btn-primary btn-lg">
             <svg
               width="20"
               height="20"
@@ -53,365 +403,24 @@ import Layout from "../layouts/Layout.astro";
                 x2="12"
                 y2="3"></line></svg
             >
-            Download APK
+            Download Latest APK
           </a>
-          <a
-            href="https://github.com/K689-EUDI/IdentID"
-            target="_blank"
-            rel="noopener"
-            class="btn btn-outline btn-lg"
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"
-              ><path
-                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-              ></path></svg
-            >
-            View Source
-          </a>
-        </div>
-        <div class="hero-badges" data-animate>
-          <span class="tech-badge">Kotlin</span>
-          <span class="tech-badge">Jetpack Compose</span>
-          <span class="tech-badge">EUDI Wallet Core</span>
-          <span class="tech-badge">NFC & BLE</span>
+          <p class="download-note">
+            Or browse <a
+              href="https://github.com/K689-EUDI/IdentID/releases"
+              target="_blank"
+              rel="noopener">all releases</a
+            > on GitHub.
+          </p>
         </div>
       </div>
-      <div class="hero-visual" data-animate>
-        <div class="phone-mockup">
-          <img src="/icon.webp" alt="IdentID App Icon" class="hero-icon" />
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- Features -->
-  <section class="features" id="features">
-    <div class="container">
-      <div class="section-header" data-animate>
-        <h2>Everything you need in a digital wallet</h2>
-        <p>Built on EU standards, designed for real people.</p>
-      </div>
-      <div class="features-grid">
-        <div class="feature-card" data-animate>
-          <div class="feature-icon">
-            <svg
-              width="22"
-              height="22"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.8"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              ><rect x="2" y="5" width="20" height="14" rx="2"></rect><line
-                x1="2"
-                y1="10"
-                x2="22"
-                y2="10"></line><line x1="6" y1="15" x2="10" y2="15"></line></svg
-            >
-          </div>
-          <h3>Document Management</h3>
-          <p>
-            Store and browse your identity documents and loyalty cards in one
-            secure place.
-          </p>
-        </div>
-        <div class="feature-card" data-animate>
-          <div class="feature-icon">
-            <svg
-              width="22"
-              height="22"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.8"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              ><path d="M12 20h9"></path><path
-                d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"
-              ></path></svg
-            >
-          </div>
-          <h3>Document Signing</h3>
-          <p>
-            Digitally sign documents using Remote Qualified Electronic
-            Signatures (RQES).
-          </p>
-        </div>
-        <div class="feature-card" data-animate>
-          <div class="feature-icon">
-            <svg
-              width="22"
-              height="22"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.8"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              ><rect x="3" y="3" width="7" height="7"></rect><rect
-                x="14"
-                y="3"
-                width="7"
-                height="7"></rect><rect x="3" y="14" width="7" height="7"
-              ></rect><rect x="14" y="14" width="3" height="3"></rect></svg
-            >
-          </div>
-          <h3>Proximity Sharing</h3>
-          <p>
-            Share credentials face-to-face via QR code and Bluetooth Low Energy.
-          </p>
-        </div>
-        <div class="feature-card" data-animate>
-          <div class="feature-icon">
-            <svg
-              width="22"
-              height="22"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.8"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              ><path d="M5 12.55a11 11 0 0114.08 0"></path><path
-                d="M1.42 9a16 16 0 0121.16 0"></path><path
-                d="M8.53 16.11a6 6 0 016.95 0"></path><circle
-                cx="12"
-                cy="20"
-                r="1"></circle></svg
-            >
-          </div>
-          <h3>NFC Transfer</h3>
-          <p>
-            Tap-to-share wallet data between devices. Quick, contactless, and
-            secure.
-          </p>
-        </div>
-        <div class="feature-card" data-animate>
-          <div class="feature-icon">
-            <svg
-              width="22"
-              height="22"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.8"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              ><rect x="3" y="11" width="18" height="11" rx="2"></rect><path
-                d="M7 11V7a5 5 0 0110 0v4"></path></svg
-            >
-          </div>
-          <h3>Biometric & PIN Auth</h3>
-          <p>
-            Protect access with your fingerprint or device PIN. Your data stays
-            yours.
-          </p>
-        </div>
-        <div class="feature-card" data-animate>
-          <div class="feature-icon">
-            <svg
-              width="22"
-              height="22"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.8"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              ><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path><circle
-                cx="12"
-                cy="7"
-                r="4"></circle></svg
-            >
-          </div>
-          <h3>Pseudonyms</h3>
-          <p>
-            Manage pseudonymous identities for when you want extra privacy
-            online.
-          </p>
-        </div>
-        <div class="feature-card" data-animate>
-          <div class="feature-icon">
-            <svg
-              width="22"
-              height="22"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.8"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              ><polyline points="23 4 23 10 17 10"></polyline><path
-                d="M20.49 15a9 9 0 11-2.12-9.36L23 10"></path></svg
-            >
-          </div>
-          <h3>QR Issuance</h3>
-          <p>
-            Add new credentials simply by scanning an issuer's QR code. No fuss.
-          </p>
-        </div>
-        <div class="feature-card" data-animate>
-          <div class="feature-icon">
-            <svg
-              width="22"
-              height="22"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.8"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              ><rect x="5" y="2" width="14" height="20" rx="2"></rect><line
-                x1="12"
-                y1="18"
-                x2="12.01"
-                y2="18"></line><path d="M9 7h6M9 11h4"></path></svg
-            >
-          </div>
-          <h3>Device Transfer</h3>
-          <p>
-            Switching phones? Migrate your entire wallet to a new device
-            seamlessly.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Demo -->
-  <section class="demo" id="demo">
-    <div class="container">
-      <div class="section-header" data-animate>
-        <h2>See it in action</h2>
-        <p>
-          A quick walkthrough of IdentID showing the main features and flow.
-        </p>
-      </div>
-      <div class="demo-video" data-animate>
-        <video controls preload="metadata">
-          <source src="/demo.mp4" type="video/mp4" />
-          Your browser doesn't support video playback.
-        </video>
-      </div>
-    </div>
-  </section>
-
-  <!-- Team -->
-  <section class="team" id="team">
-    <div class="container">
-      <div class="section-header" data-animate>
-        <h2>Meet the team</h2>
-        <p>A student group project at Kaunas University of Technology.</p>
-      </div>
-      <div class="team-grid">
-        <div class="team-card" data-animate>
-          <img
-            src="https://avatars.githubusercontent.com/u/26341983?v=4"
-            alt="Linas Aleksandravičius"
-            class="team-avatar"
-            loading="lazy"
-          />
-          <h3>Linas Aleksandravičius</h3>
-          <p class="team-role">IFF-3/2</p>
-          <a
-            href="https://github.com/Linux123123"
-            target="_blank"
-            rel="noopener">@Linux123123</a
-          >
-        </div>
-        <div class="team-card" data-animate>
-          <img
-            src="https://avatars.githubusercontent.com/u/199596835?v=4"
-            alt="Nojus Birmanas"
-            class="team-avatar"
-            loading="lazy"
-          />
-          <h3>Nojus Birmanas</h3>
-          <p class="team-role">IFF-3/1</p>
-          <a href="https://github.com/Nirmanas" target="_blank" rel="noopener"
-            >@Nirmanas</a
-          >
-        </div>
-        <div class="team-card" data-animate>
-          <img
-            src="https://avatars.githubusercontent.com/u/143647478?v=4"
-            alt="Martynas Kvietelaitis"
-            class="team-avatar"
-            loading="lazy"
-          />
-          <h3>Martynas Kvietelaitis</h3>
-          <p class="team-role">IFF-3/4</p>
-          <a
-            href="https://github.com/kvietelaitis"
-            target="_blank"
-            rel="noopener">@kvietelaitis</a
-          >
-        </div>
-        <div class="team-card" data-animate>
-          <div class="team-avatar-placeholder"></div>
-          <h3>Nojus Talubinskas</h3>
-          <p class="team-role">MGTM-3/1</p>
-        </div>
-        <div class="team-card" data-animate>
-          <div class="team-avatar-placeholder"></div>
-          <h3>Ričardas Žiemys</h3>
-          <p class="team-role">MGMFN-3</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Download -->
-  <section class="download" id="download">
-    <div class="container">
-      <div class="download-card" data-animate>
-        <h2>Ready to try it?</h2>
-        <p>
-          Grab the latest release APK directly from GitHub. Android only for now
-          - requires Android 8.0+.
-        </p>
-        <a
-          id="download-btn"
-          href="https://github.com/K689-EUDI/IdentID/releases/latest"
-          target="_blank"
-          rel="noopener"
-          class="btn btn-primary btn-lg"
-        >
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            ><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"></path><polyline
-              points="7 10 12 15 17 10"></polyline><line
-              x1="12"
-              y1="15"
-              x2="12"
-              y2="3"></line></svg
-          >
-          Download Latest APK
-        </a>
-        <p class="download-note">
-          Or browse <a
-            href="https://github.com/K689-EUDI/IdentID/releases"
-            target="_blank"
-            rel="noopener">all releases</a
-          > on GitHub.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
   <footer class="footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <img src="/icon.webp" alt="IdentID" width="28" height="28" />
+        <Image src={logo} alt="" width={28} height={28} />
         <span>IdentID</span>
       </div>
       <p class="footer-copy">
@@ -438,7 +447,6 @@ import Layout from "../layouts/Layout.astro";
 </Layout>
 
 <style>
-  /* Nav */
   .nav {
     position: fixed;
     top: 0;
@@ -468,7 +476,7 @@ import Layout from "../layouts/Layout.astro";
     color: var(--color-text);
   }
 
-  .nav-brand img {
+  .nav-brand :global(img) {
     border-radius: 8px;
   }
 
@@ -488,7 +496,6 @@ import Layout from "../layouts/Layout.astro";
     color: var(--color-text);
   }
 
-  /* Buttons */
   .btn {
     display: inline-flex;
     align-items: center;
@@ -537,14 +544,12 @@ import Layout from "../layouts/Layout.astro";
     transform: translateY(-1px);
   }
 
-  /* Container */
   .container {
     max-width: var(--max-width);
     margin: 0 auto;
     padding: 0 2rem;
   }
 
-  /* Hero */
   .hero {
     position: relative;
     min-height: 100vh;
@@ -659,6 +664,7 @@ import Layout from "../layouts/Layout.astro";
     box-shadow:
       0 30px 80px rgba(0, 0, 0, 0.4),
       0 0 60px rgba(79, 140, 255, 0.05);
+    animation: float 3s ease-in-out infinite;
   }
 
   .hero-icon {
@@ -667,7 +673,10 @@ import Layout from "../layouts/Layout.astro";
     border-radius: 24px;
   }
 
-  /* Section headers */
+  .hero-icon :global(img) {
+    border-radius: 24px;
+  }
+
   .section-header {
     text-align: center;
     margin-bottom: 3.5rem;
@@ -687,8 +696,10 @@ import Layout from "../layouts/Layout.astro";
     margin: 0 auto;
   }
 
-  /* Features */
-  .features {
+  .features,
+  .demo,
+  .team,
+  .download {
     padding: 6rem 0;
   }
 
@@ -698,11 +709,16 @@ import Layout from "../layouts/Layout.astro";
     gap: 1.5rem;
   }
 
-  .feature-card {
-    padding: 2rem;
+  .feature-card,
+  .team-card {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: 16px;
+    transition: transform 0.2s;
+  }
+
+  .feature-card {
+    padding: 2rem;
     transition:
       transform 0.2s,
       border-color 0.2s;
@@ -739,11 +755,6 @@ import Layout from "../layouts/Layout.astro";
     line-height: 1.6;
   }
 
-  /* Demo */
-  .demo {
-    padding: 6rem 0;
-  }
-
   .demo-video {
     max-width: 700px;
     margin: 0 auto;
@@ -759,11 +770,6 @@ import Layout from "../layouts/Layout.astro";
     background: #000;
   }
 
-  /* Team */
-  .team {
-    padding: 6rem 0;
-  }
-
   .team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -775,34 +781,23 @@ import Layout from "../layouts/Layout.astro";
   .team-card {
     text-align: center;
     padding: 2rem 1.5rem;
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: 16px;
-    transition: transform 0.2s;
   }
 
   .team-card:hover {
     transform: translateY(-3px);
   }
 
-  .team-avatar {
-    width: 72px;
-    height: 72px;
-    border-radius: 50%;
-    margin-bottom: 1rem;
-    border: 2px solid var(--color-border);
-  }
-
+  .team-avatar,
   .team-avatar-placeholder {
     width: 72px;
     height: 72px;
     border-radius: 50%;
     margin: 0 auto 1rem;
     border: 2px solid var(--color-border);
+  }
+
+  .team-avatar-placeholder {
     background: var(--color-surface-light);
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
   .team-card h3 {
@@ -819,11 +814,6 @@ import Layout from "../layouts/Layout.astro";
 
   .team-card a {
     font-size: 0.85rem;
-  }
-
-  /* Download */
-  .download {
-    padding: 6rem 0;
   }
 
   .download-card {
@@ -857,7 +847,19 @@ import Layout from "../layouts/Layout.astro";
     color: var(--color-text-muted);
   }
 
-  /* Footer */
+  .download-note a,
+  .footer-copy a {
+    color: var(--color-text);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.16em;
+  }
+
+  .download-note a:hover,
+  .footer-copy a:hover {
+    color: var(--color-primary);
+  }
+
   .footer {
     padding: 2.5rem 0;
     border-top: 1px solid var(--color-border);
@@ -879,7 +881,7 @@ import Layout from "../layouts/Layout.astro";
     font-size: 0.95rem;
   }
 
-  .footer-brand img {
+  .footer-brand :global(img) {
     border-radius: 6px;
   }
 
@@ -903,13 +905,31 @@ import Layout from "../layouts/Layout.astro";
     color: var(--color-text);
   }
 
-  /* Animations (initial hidden state for motion.dev) */
-  [data-animate] {
+  .motion-ready [data-animate] {
     opacity: 0;
     transform: translateY(20px);
+    transition:
+      opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: opacity, transform;
   }
 
-  /* Mobile */
+  .motion-ready [data-animate].in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
   @media (max-width: 768px) {
     .hero-content {
       grid-template-columns: 1fr;
@@ -920,10 +940,7 @@ import Layout from "../layouts/Layout.astro";
       margin: 0 auto 2rem;
     }
 
-    .hero-actions {
-      justify-content: center;
-    }
-
+    .hero-actions,
     .hero-badges {
       justify-content: center;
     }
@@ -956,74 +973,43 @@ import Layout from "../layouts/Layout.astro";
       text-align: center;
     }
   }
-</style>
 
-<script>
-  import { animate, inView, stagger } from "motion";
-  type KF = Parameters<typeof animate>[1];
+  @media (prefers-reduced-motion: reduce) {
+    .phone-mockup {
+      animation: none;
+    }
 
-  // Animate elements when they scroll into view
-  document.querySelectorAll<HTMLElement>("[data-animate]").forEach((el) => {
-    inView(
-      el,
-      () => {
-        animate(el, { opacity: [0, 1], y: [20, 0] } as KF, {
-          duration: 0.6,
-          ease: [0.25, 0.46, 0.45, 0.94],
-        });
-      },
-      { margin: "0px 0px -100px 0px" },
-    );
-  });
-
-  // Stagger feature cards
-  const featureCards = Array.from(
-    document.querySelectorAll<HTMLElement>(".feature-card"),
-  );
-  if (featureCards.length) {
-    inView(
-      featureCards[0],
-      () => {
-        animate(featureCards, { opacity: [0, 1], y: [30, 0] } as KF, {
-          duration: 0.5,
-          delay: stagger(0.08),
-          ease: [0.25, 0.46, 0.45, 0.94],
-        });
-      },
-      { margin: "0px 0px -50px 0px" },
-    );
-  }
-
-  // Floating animation for phone mockup
-  const mockup = document.querySelector<HTMLElement>(".phone-mockup");
-  if (mockup) {
-    animate(mockup, { y: [0, -10, 0] } as KF, {
-      duration: 3,
-      repeat: Infinity,
-      ease: "easeInOut",
-    });
-  }
-
-  // Fetch latest release APK download link
-  async function setDownloadLink() {
-    try {
-      const res = await fetch(
-        "https://api.github.com/repos/K689-EUDI/IdentID/releases/latest",
-      );
-      if (!res.ok) return;
-      const data = await res.json();
-      const apk = data.assets?.find((a: { name: string }) =>
-        a.name.endsWith(".apk"),
-      );
-      if (apk) {
-        const btn = document.getElementById("download-btn");
-        if (btn) {
-          btn.setAttribute("href", apk.browser_download_url);
-        }
-      }
-    } catch {
-      // Fall back to releases page link
+    .motion-ready [data-animate] {
+      opacity: 1;
+      transform: none;
+      transition: none;
     }
   }
-  setDownloadLink();
+</style>
+
+<script is:inline>
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    document.documentElement.classList.add("motion-ready");
+
+    const animated = document.querySelectorAll("[data-animate]");
+    const observer = new IntersectionObserver(
+      (entries, currentObserver) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+          entry.target.classList.add("in-view");
+          currentObserver.unobserve(entry.target);
+        });
+      },
+      {
+        rootMargin: "0px 0px -80px 0px",
+      },
+    );
+
+    animated.forEach((element) => {
+      observer.observe(element);
+    });
+  }
 </script>
