@@ -302,6 +302,12 @@ import logo from "../assets/logo.svg";
         <div class="demo-video" data-animate>
           <video controls preload="metadata">
             <source src="/demo.mp4" type="video/mp4" />
+            <track
+              kind="captions"
+              src="/demo.en.vtt"
+              srclang="en"
+              label="English captions"
+            />
             Your browser doesn't support video playback.
           </video>
         </div>
@@ -522,12 +528,12 @@ import logo from "../assets/logo.svg";
 
   .btn-primary {
     background: var(--color-primary);
-    color: white;
+    color: var(--color-primary-ink);
   }
 
   .btn-primary:hover {
-    background: var(--color-primary-hover);
-    color: white;
+    background: #5e98ff;
+    color: var(--color-primary-ink);
     transform: translateY(-1px);
     box-shadow: 0 4px 20px rgba(79, 140, 255, 0.3);
   }
