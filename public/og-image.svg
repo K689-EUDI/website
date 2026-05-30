@@ -18,10 +18,10 @@
       <stop offset="1" stop-color="#38BDF8" stop-opacity="0.14" />
     </linearGradient>
   </defs>
-  <rect width="1200" height="630" rx="36" fill="url(#bg)" />
+  <rect width="1200" height="630" fill="url(#bg)" />
   <circle cx="1012" cy="96" r="240" fill="url(#glowA)" />
   <circle cx="120" cy="578" r="180" fill="url(#glowB)" />
-  <rect x="62" y="58" width="1076" height="514" rx="32" fill="#0A1428" fill-opacity="0.32" stroke="#BFDBFE" stroke-opacity="0.1" />
+  <rect x="62" y="58" width="1076" height="514" fill="#0A1428" fill-opacity="0.32" stroke="#BFDBFE" stroke-opacity="0.1" />
   <path d="M812 104C887 144 948 210 992 304" stroke="#93C5FD" stroke-opacity="0.12" stroke-width="2" stroke-dasharray="10 16" />
   <path d="M875 98C962 154 1030 249 1071 370" stroke="#67E8F9" stroke-opacity="0.12" stroke-width="2" stroke-dasharray="10 18" />
   <text x="108" y="152" fill="#8DD7FF" font-size="26" font-weight="700" letter-spacing="0.18em" font-family="Inter, Segoe UI, Arial, sans-serif">OPEN-SOURCE EUDI WALLET</text>
